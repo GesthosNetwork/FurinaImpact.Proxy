@@ -20,12 +20,12 @@ namespace FurinaImpactProxy
             ".yuanshen.com:12401",
             ".zenlesszonezero.com",
             ".honkaiimpact3.com",
-			".bh3.com",
+	    ".bh3.com",
             ".bhsr.com",
             ".starrails.com",
-			".kurogame.net",
-			".kurogame-service.com",
-			".kurogame.com"
+	    ".kurogame.net",
+	    ".kurogame-service.com",
+	    ".kurogame.com"
         ];
 
         public ProxyService(ProxyConfig config)
