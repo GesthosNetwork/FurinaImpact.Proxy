@@ -5,25 +5,21 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	<ApplicationIcon>app.ico</ApplicationIcon>
-	<BaseOutputPath>..\bin\</BaseOutputPath>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <BaseOutputPath>..\bin\</BaseOutputPath>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <Configuration>Release</Configuration>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Titanium.Web.Proxy" Version="3.2.0" />
-	<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="config.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   
   <PropertyGroup>
-    <NoWarn>$(NoWarn);8600</NoWarn>
-	<NoWarn>$(NoWarn);8601</NoWarn>
-	<NoWarn>$(NoWarn);8618</NoWarn>
+    <NoWarn>$(NoWarn);8600,8601,8618</NoWarn>
   </PropertyGroup>
 
 </Project>

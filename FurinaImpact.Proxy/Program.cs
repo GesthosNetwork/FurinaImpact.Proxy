@@ -4,36 +4,30 @@ using Newtonsoft.Json;
 Console.Title = "FurinaImpact | Proxy";
 
 string configJson;
-try
-{
+
+try {
     configJson = File.ReadAllText("./config.json");
-}
-catch (Exception)
-{
+} catch (Exception) {
     ProxyConfig defaultConfig = new();
     configJson = JsonConvert.SerializeObject(defaultConfig, Formatting.Indented);
     File.WriteAllText("./config.json", configJson);
 }
 
-if (string.IsNullOrWhiteSpace(configJson))
-{
+if (string.IsNullOrWhiteSpace(configJson)) {
     Environment.Exit(-1);
     return;
 }
 
 ProxyConfig config;
-try
-{
+
+try {
     config = JsonConvert.DeserializeObject<ProxyConfig>(configJson);
-}
-catch (Exception)
-{
+} catch (Exception) {
     Environment.Exit(-1);
     return;
 }
 
-if (config == null)
-{
+if (config == null) {
     Environment.Exit(-1);
     return;
 }
@@ -43,9 +37,8 @@ int port = config.PORT;
 
 ProxyService service = new(config);
 
-AppDomain.CurrentDomain.ProcessExit += (_, _) =>
-{
+AppDomain.CurrentDomain.ProcessExit += (_, _) => {
     service.Shutdown();
 };
 
-while (true) { }
+while (true) {}
